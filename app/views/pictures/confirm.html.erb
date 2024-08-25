@@ -1,0 +1,10 @@
+<%= form_with(model: @picture,local: true) do |form| %>
+    <%= form.hidden_field :content %>
+    <%= form.hidden_field :image %>
+    
+    <p>:<%= @picture.content %></p>
+    <p>:<%= @picture.image %></p>
+    
+    <%= form.submit '登録する' %>
+    <%= form.submit '戻る',name: 'back' %>
+<% end %>

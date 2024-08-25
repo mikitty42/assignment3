@@ -7,7 +7,7 @@ class PicturesController < ApplicationController
   end
   
   def create
-      @picture = Picture.new(picture_patams)
+      @picture = Picture.new(picture_params)
       if params[:back]
           render :new, status: :unprocessable_entity
       else
@@ -32,12 +32,14 @@ class PicturesController < ApplicationController
   end
   
   def confirm
+      @picture = Picture.new(picture_params)
+      render :new if @picture.invalid?
   end
   
   
   private
   
-  def picture_patams
+  def picture_params
       params.require(:picture).permit(:content,:image,:image_cache)
   end
 end
