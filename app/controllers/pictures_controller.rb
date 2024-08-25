@@ -13,7 +13,7 @@ class PicturesController < ApplicationController
           render :new, status: :unprocessable_entity
       else
           if @picture.save
-              redirect_to picture_path,notice: 'Pictureを登録しました'
+              redirect_to pictures_path,notice: 'Pictureを登録しました'
           else
               render :new, status: :unprocessable_entity
           end
@@ -25,9 +25,16 @@ class PicturesController < ApplicationController
   end
 
   def edit
+      @pictute = Picture.params[:id]
   end
   
   def update
+      @pictute = Picture.params[:id]
+      if @picture.seave
+          redirect_to pictures_path,notice: 'Pictureを編集しました'
+      else
+          render :edit, status: :unprocessable_entity
+      end
   end
   
   def destroy
