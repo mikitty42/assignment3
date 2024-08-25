@@ -1,2 +1,23 @@
-<h1>Pictures#index</h1>
-<p>Find me in app/views/pictures/index.html.erb</p>
+<h2></h2>
+<%= notice %>
+
+<table>
+    <tr>
+        <th></th>
+        <th></th>
+    </tr>
+    
+    <tr>
+    <% @pictures.each do |picture| %>
+        <td><%= picture.content %></td>
+        <td><%= picture.image %></td>
+        <td><%= link_to '詳細を見る',picture_path(picture.id) %></td>
+        <td><%= link_to '編集する',edit_picture_path(picture.id) %></td>
+        <td><%= link_to '削除する',picture_path(picture.id),data: {turbo_method: :delete,turbo_confirm: "Are you sure?"} %></td>
+    <% end %>
+    </tr>
+</table>
+
+<%= link_to 'Pictureを投稿する',new_picture_path %>
+    
+
