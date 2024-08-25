@@ -21,6 +21,7 @@ class PicturesController < ApplicationController
   end
 
   def show
+      @pictute = Picture.params[:id]
   end
 
   def edit
