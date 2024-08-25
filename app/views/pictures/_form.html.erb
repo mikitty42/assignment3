@@ -18,6 +18,7 @@
     <div id='picture_image'>
         <%= form.label :image %>
         <%= image_tag(@picture.image.url) if @pictute.image && @picture.image.url %>
+        <%= image_tag(feed.image.url) if feed.image && feed.image.url %>
         <%= form.file_field :image %>
         <%= form.hidden_field :image_cache %>
     </div>
