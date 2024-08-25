@@ -38,6 +38,9 @@ class PicturesController < ApplicationController
   end
   
   def destroy
+      @pictute = Picture.find(params[:id])
+      @picture.destroy
+      redirect_to pictures_path,notice: 'Pictureを削除しました'
   end
   
   def confirm
