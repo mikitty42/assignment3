@@ -25,10 +25,16 @@ gem "bootsnap", require: false
 
 gem 'carrierwave'
 gem 'mini_magick'
+gem 'bootstrap', '~> 5.3.0'
+gem 'jquery-rails'
+gem "sassc-rails"
 
 
 group :development, :test do
   gem "debug", platforms: %i[ mri windows ]
+  gem 'pry-rails'
+  gem 'better_errors'
+  gem 'binding_of_caller'
 end
 
 group :development do

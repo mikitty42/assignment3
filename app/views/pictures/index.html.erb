@@ -5,12 +5,14 @@
     <tr>
         <th>Content</th>
         <th>Image</th>
+        <th>User</th>
     </tr>
     
     <tr>
     <% @pictures.each do |picture| %>
         <td><%= picture.content %></td>
         <td><%= picture.image %></td>
+        <td><%= picture.user.name %></td>
         <td><%= link_to '詳細を見る',picture_path(picture.id) %></td>
         <td><%= link_to '編集する',edit_picture_path(picture.id) %></td>
         <td><%= link_to '削除する',picture_path(picture.id),data: {turbo_method: :delete,turbo_confirm: "Are you sure?"} %></td>

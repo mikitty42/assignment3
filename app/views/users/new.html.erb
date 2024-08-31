@@ -1,5 +1,6 @@
-<%= form_with(model: @user,local: true) do |f| %>
-    <% @if @user.errors.any? %>
+<h1>Sign up</h1>
+<%= form_with(model: @user,local: true, data: { turbo: false }) do |f| %>
+    <% if @user.errors.any? %>
       <div id='error_explanation'>
         <h2><%= @user.errors.count %>件のエラーがあります</h2>
         <ul>
@@ -30,7 +31,7 @@
         <%= f.password_field :password_confirmation %>
     </div>
     
-    <%= f.submit 'Create my account'>
+    <%= f.submit 'Create my account'%>
 <% end %>
     
     

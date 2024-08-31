@@ -1,9 +1,9 @@
-<%= form_with(model: @picture,local: true, data: { turbo: false },url: choose_new_or_edit) do |form| %>
-    <% if @picture.errors.any? %>
+<%= form_with(model: picture,local: true, data: { turbo: false },url: choose_new_or_edit) do |form| %>
+    <% if picture.errors.any? %>
       <div id='error_explanation'>
-        <h2><%= @picture.errors.count %>件のエラーがあります</h2>
+        <h2><%= picture.errors.count %>件のエラーがあります</h2>
          <ul>
-            <% @picture.errors.full_messages.each do |msg| %>
+            <% picture.errors.full_messages.each do |msg| %>
             <li><%= msg %></li>
             <% end %>
          </ul>
@@ -17,8 +17,6 @@
     
     <div id='picture_image'>
         <%= form.label :image %>
-        <%= image_tag(@picture.image.url) if @pictute.image && @picture.image.url %>
-        <%= image_tag(feed.image.url) if feed.image && feed.image.url %>
         <%= form.file_field :image %>
         <%= form.hidden_field :image_cache %>
     </div>
